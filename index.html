@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloco de Notas</title>
+</head>
+<body>
+<header>
+<h1>Bloco de Notas</h1>
+Titulo: <input type='text' id='name-note'>
+<button id='btn-create-note'>Criar nota</button>
+<div>
+	<ul id='list-notes'>
+	
+	</ul>
+</div>
+</header>
+
+<script>
+let arrNotes = document.querySelector('#list-notes');
+const buttonCreateNote = document.querySelector('#btn-create-note');
+let titleNote = document.querySelector('#name-note');
+
+buttonCreateNote.addEventListener('click', () => {
+	if (titleNote.value === ''){
+		let noteCreated = document.createElement('li');
+		arrNotes.appendChild(noteCreated);
+		noteCreated.innerText = '<string vazia>';
+	}else{
+		let noteCreated = document.createElement('li');
+		arrNotes.appendChild(noteCreated);
+		noteCreated.innerText = titleNote.value;
+		}
+});
+
+</script>
+</body>
+</html>
