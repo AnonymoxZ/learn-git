@@ -35,7 +35,7 @@ Titulo: <input type='text' id='name-note'>
 let arrNotes = document.querySelector('#list-notes');
 const buttonCreateNote = document.querySelector('#btn-create-note');
 let titleNote = document.querySelector('#name-note');
-let showNotes = true;
+const buttonChangeColor = document.querySelector('#btn-change-color');
 let colors = ['blue','yellow','green','white']
 
 
@@ -53,7 +53,6 @@ buttonCreateNote.addEventListener('click', () => {
 });
 
 
-const buttonChangeColor = document.querySelector('#btn-change-color');
 buttonChangeColor.addEventListener('click', () => {
 	let colorRandom = colors[Math.floor(Math.random() * colors.length)]
 	arrNotes.style.color = colorRandom;
