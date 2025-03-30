@@ -23,6 +23,7 @@ background-color: #f43;
 <h1>Bloco de Notas</h1>
 Titulo: <input type='text' id='name-note'>
 <button id='btn-create-note'>Criar nota</button>
+<button id='btn-change-color'>Muda cor</button>
 <div>
 	<ul id='list-notes'>
 	
@@ -34,6 +35,10 @@ Titulo: <input type='text' id='name-note'>
 let arrNotes = document.querySelector('#list-notes');
 const buttonCreateNote = document.querySelector('#btn-create-note');
 let titleNote = document.querySelector('#name-note');
+let showNotes = true;
+let colors = ['blue','yellow','green','white']
+
+
 
 buttonCreateNote.addEventListener('click', () => {
 	if (titleNote.value === ''){
@@ -47,6 +52,12 @@ buttonCreateNote.addEventListener('click', () => {
 		}
 });
 
+
+const buttonChangeColor = document.querySelector('#btn-change-color');
+buttonChangeColor.addEventListener('click', () => {
+	let colorRandom = colors[Math.floor(Math.random() * colors.length)]
+	arrNotes.style.color = colorRandom;
+})
 </script>
 </body>
 </html>
